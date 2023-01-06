@@ -1,0 +1,20 @@
+.selectlogin{
+    text-align: center;
+    font-weight: 400;
+    padding-top: 10px;
+    color:#000066;
+    border: 5px solid salmon;
+    box-shadow: 20px 20px 20px 20px gray;
+    margin-left: 20%;
+    margin-right: 20%;
+    margin-top: 1%;
+    padding-bottom: 10px;
+    border-radius: 30px;
+    background-color: #FFF8F3;
+}
+.image{
+    
+    height: 180px;  
+    width: 180px;
+    border-radius: 10px;
+}
