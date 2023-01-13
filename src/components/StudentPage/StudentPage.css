@@ -1,0 +1,18 @@
+input{
+    padding-top: 2vh;
+    margin-top: 1.5vh;
+    border: none;
+    background-color: whitesmoke;
+    margin-left: 1vw;
+    border-radius: 5px;
+}
+.formhandle{
+    padding-left: 8vw;
+    background-color: #f7e7db;
+    margin-left: 30%;
+    margin-right: 35%;
+    border-radius: 10px;
+}
+.setBackground{
+    background-image: url('../../Images/studentProfileBackground.jpg');
+}

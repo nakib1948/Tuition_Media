@@ -1,31 +1,26 @@
 .header{
-    
-    text-align: center;
+    background-image: url('../../Images/education_image.jpg');
+   
  
-    display: flex;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
     
 }
-.font{
-    margin-top: 10px;
-    font-weight: 400;
-    color: #330000;
-    padding-top: 160px;
-    padding-left: 100px;
-}
-.font1{
+.header-child{
+    width: 30%;
     text-align: center;
-    color: #000033;
+    float: right;
+    margin-top: 30vh;
+    margin-right: 5vw;
+    color: black;
 }
-.center-fit {
-    max-width: 100%;
-    max-height: 100vh;
-    margin: auto;
-    border-radius: 10px;
+.header-child button{
+    width: 20vw;
+}
+.header-child h3,p,button{
+    padding-top: 2vh;
 }
 
-.baton{
-
-    width:100%;
-    display:block;
-    margin-top: 15px;
-}

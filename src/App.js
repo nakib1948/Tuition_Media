@@ -7,11 +7,18 @@ import Selectlogin from './components/Selectlogin/Selectlogin';
 import Notfound from './components/Notfound/Notfound';
 import Studentlogin from './components/Studentlogin/Studentlogin';
 import StudentRegister from './components/StudentRegister/StudentRegister';
+import StudentPage from './components/StudentPage/StudentPage';
+import StudentProfile from './components/StudentProfile/StudentProfile';
+import { createContext, useState } from 'react';
+
+
+export const userContext=createContext();
 
 function App() {
+  const [loggedinUser,setloggedinUser]=useState({});
   return (
-    <div className='app'>
-      
+    <userContext.Provider value={[loggedinUser,setloggedinUser]}>
+      <h3>email:{loggedinUser.email}</h3>
       
 
       <Routes>
@@ -19,11 +26,13 @@ function App() {
       <Route path='/selectlogin' element={<Selectlogin/>}/>
       <Route path='/studentlogin' element={<Studentlogin/>}/>
       <Route path='/studentregister' element={<StudentRegister/>}/>
+      <Route path='/studentpage' element={<StudentPage/>}/>
+      <Route path='/studentprofile' element={<StudentProfile/>}/>
       <Route exact path='/' element={<Header/>}/>
       <Route path='*' element={<Notfound/>}/>
       </Routes>
 
-    </div>
+    </userContext.Provider>
   );
 }
 
