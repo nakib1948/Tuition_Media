@@ -10,6 +10,7 @@ import StudentRegister from './components/StudentRegister/StudentRegister';
 import StudentPage from './components/StudentPage/StudentPage';
 import StudentProfile from './components/StudentProfile/StudentProfile';
 import { createContext, useState } from 'react';
+import StudentHistory from './components/StudentHistory/StudentHistory';
 
 
 export const userContext=createContext();
@@ -28,6 +29,7 @@ function App() {
       <Route path='/studentregister' element={<StudentRegister/>}/>
       <Route path='/studentpage' element={<StudentPage/>}/>
       <Route path='/studentprofile' element={<StudentProfile/>}/>
+      <Route path='/studenthistory' element={<StudentHistory/>}/>
       <Route exact path='/' element={<Header/>}/>
       <Route path='*' element={<Notfound/>}/>
       </Routes>

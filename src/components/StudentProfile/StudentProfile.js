@@ -9,23 +9,36 @@ import { userContext } from '../../App';
 import { MDBCol, MDBContainer, MDBRow, MDBCard, MDBCardText, MDBCardBody, MDBCardImage, MDBTypography, MDBIcon } from 'mdb-react-ui-kit';
 const StudentProfile = () => {
     const navigate = useNavigate();
-    const [loggedinUser,setloggedinUser]=useContext(userContext)
-    const check=false;
+    const [loggedinUser,setloggedinUser]=useContext(userContext);
+    const {username,school,mobile,image,email,address}=loggedinUser;
+    let check=false;
     function handleClick(event) {
         check=true;
-           
+        setloggedinUser({})
+        if(check){
         navigate('/studentlogin')    
+        }
+   }
+   function handleClick1(){
+       navigate('/studenthistory')
    }
     return (
         <div className='profileBackground'>
              <Navbar  bg="dark" variant="dark">
-                <Container style={{marginLeft:'40vw'}} >
+                <Container style={{marginLeft:'20vw'}} >
                 <Navbar.Brand href="#home">
                 <Button  size="sm" variant="primary"  active>
                        Update Profile
                     </Button>
                 </Navbar.Brand>
-                <Nav style={{paddingLeft:'3vw'}}  className="me-auto">
+                <Nav style={{paddingLeft:'0vw'}}  className="me-auto">
+                   
+                    <Button onClick={handleClick1} size="sm" variant="primary"  active>
+                        History
+                    </Button>
+                 
+                </Nav>
+                <Nav style={{paddingLeft:'1vw'}}  className="me-auto">
                    
                     <Button onClick={handleClick} size="sm" variant="primary"  active>
                         Logout
@@ -42,9 +55,9 @@ const StudentProfile = () => {
                         <MDBRow className="g-0">
                             <MDBCol md="4" className="gradient-custom text-center text-white"
                             style={{ borderTopLeftRadius: '.5rem', borderBottomLeftRadius: '.5rem' }}>
-                            <MDBCardImage src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava1-bg.webp"
-                                alt="Avatar" className="my-5" style={{ width: '80px' }} fluid />
-                            <MDBTypography tag="h5">Marie Horwitz</MDBTypography>
+                            <MDBCardImage src={image} 
+                                alt="Avatar" className="my-5" style={{ width: '150px',borderRadius:'50%' }} fluid />
+                            <MDBTypography tag="h5">{username}</MDBTypography>
                             <MDBCardText>Web Designer</MDBCardText>
                             <MDBIcon far icon="edit mb-5" />
                             </MDBCol>
@@ -55,11 +68,11 @@ const StudentProfile = () => {
                                 <MDBRow className="pt-1">
                                 <MDBCol size="6" className="mb-3">
                                     <MDBTypography tag="h6">Email</MDBTypography>
-                                    <MDBCardText className="text-muted">info@example.com</MDBCardText>
+                                    <MDBCardText className="text-muted">{email}</MDBCardText>
                                 </MDBCol>
                                 <MDBCol size="6" className="mb-3">
                                     <MDBTypography tag="h6">Phone</MDBTypography>
-                                    <MDBCardText className="text-muted">123 456 789</MDBCardText>
+                                    <MDBCardText className="text-muted">{mobile}</MDBCardText>
                                 </MDBCol>
                                 </MDBRow>
 
@@ -67,12 +80,12 @@ const StudentProfile = () => {
                                 <hr className="mt-0 mb-4" />
                                 <MDBRow className="pt-1">
                                 <MDBCol size="6" className="mb-3">
-                                    <MDBTypography tag="h6">Email</MDBTypography>
-                                    <MDBCardText className="text-muted">info@example.com</MDBCardText>
+                                    <MDBTypography tag="h6">Address</MDBTypography>
+                                    <MDBCardText className="text-muted">{address}</MDBCardText>
                                 </MDBCol>
                                 <MDBCol size="6" className="mb-3">
-                                    <MDBTypography tag="h6">Phone</MDBTypography>
-                                    <MDBCardText className="text-muted">123 456 789</MDBCardText>
+                                    <MDBTypography tag="h6">School</MDBTypography>
+                                    <MDBCardText className="text-muted">{school}</MDBCardText>
                                 </MDBCol>
                                 </MDBRow>
 

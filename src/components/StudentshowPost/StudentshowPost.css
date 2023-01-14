@@ -1,0 +1,9 @@
+.background{
+    background-image: url('../../Images/studentProfileBackground.jpg');
+}
+@media screen and (max-width: 600px){
+    .background{
+        display: flex;
+        flex-direction: column;
+    }
+}
