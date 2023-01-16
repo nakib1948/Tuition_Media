@@ -1,10 +1,11 @@
 import React, { useContext, useEffect, useState } from 'react';
-import './Studentlogin.css'
+import './TeacherloginPage.css'
 import { useForm } from 'react-hook-form';
 import { useNavigate } from 'react-router-dom';
-import { userContext } from '../../App';
+import { userContext } from '../../../App';
 
-const Studentlogin = () => {
+
+const TeacherloginPage = () => {
 	const [loggedinUser,setloggedinUser]= useContext(userContext)
 	const [loginUser,setloginUser]=useState([]);
 	useEffect(()=>{
@@ -24,20 +25,17 @@ const Studentlogin = () => {
 		{
 			setloggedinUser(result);
 			if(loggedinUser){
-			 navigate('/studentpage');
+			 navigate('/teacherhomepage');
 			}
 		}
 		else alert('username and password incorrect')
 	}
 
-    let check= false;
+  
     function handleClick(event) {
    
-      navigate('/studentregister');
-	  if(check)
-	  {
-		alert('button click catched');
-	  }
+      navigate('/teachersignup');
+	 
 	
     }
 
@@ -77,4 +75,4 @@ const Studentlogin = () => {
     );
 };
 
-export default Studentlogin;
+export default TeacherloginPage;

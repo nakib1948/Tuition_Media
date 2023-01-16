@@ -1,15 +1,15 @@
 import React from 'react';
 import Card from 'react-bootstrap/Card';
 import ListGroup from 'react-bootstrap/ListGroup';
-import './StudentshowPost.css'
+import './TeacherAllPost.css'
 
-const StudentshowPost = (props) => {
-    const {address,days,email,phone,salary,subject,description,name}=props.post;
+const  TeacherAllPost = (props) => {
+    const {address,days,email,phone,salary,subject,description,district,name}=props.post;
     const clas=props.post.class;
     return (
-        <div >
+        <div className='box-shadow' style={{ width: '25rem',margin:'20px' }}>
               
-                <Card style={{ width: '20rem',backgroundColor:'#FFF8F3',paddingBottom:'5px' }}>
+                <Card style={{ width: '25rem',backgroundColor:'#FFF8F3',paddingBottom:'5px' }}>
                 
                 <Card.Body>
                     <Card.Title>{subject} Teacher needed</Card.Title>
@@ -21,19 +21,24 @@ const StudentshowPost = (props) => {
                 <ListGroup className="list-group-flush">
                     <ListGroup.Item>Days/Weeks: {days} days</ListGroup.Item>
                     <ListGroup.Item>Salary: {salary}TK</ListGroup.Item>
+                    <ListGroup.Item>Address: {address}</ListGroup.Item>
+                    <ListGroup.Item>District: {district}</ListGroup.Item>
                     
                 </ListGroup>
                 <Card.Body>
                     <Card.Link href="#">Email:{email}</Card.Link>
                     <br />
                     <Card.Link href="#">Phone:{phone}</Card.Link>
-                    <ListGroup.Item><button className='batonn' >see response</button></ListGroup.Item>
+                    <ListGroup.Item><button style={{padding:'2px 15px 2px 15px',marginLeft:'7vw'}} className='batonn' >Apply</button></ListGroup.Item>
                 </Card.Body>
                 
                 </Card>
-               
+                
         </div>
     );
 };
 
-export default StudentshowPost;
+
+
+
+export default TeacherAllPost;

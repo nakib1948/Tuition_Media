@@ -11,6 +11,9 @@ import StudentPage from './components/StudentPage/StudentPage';
 import StudentProfile from './components/StudentProfile/StudentProfile';
 import { createContext, useState } from 'react';
 import StudentHistory from './components/StudentHistory/StudentHistory';
+import TeacherloginPage from './components/Teacher/TeacherloginPage/TeacherloginPage';
+import TeacherSignup from './components/Teacher/TeacherloginPage/TeacherSignup/TeacherSignup';
+import TeacherHomePage from './components/Teacher/TeacherHomePage/TeacherHomePage';
 
 
 export const userContext=createContext();
@@ -30,6 +33,14 @@ function App() {
       <Route path='/studentpage' element={<StudentPage/>}/>
       <Route path='/studentprofile' element={<StudentProfile/>}/>
       <Route path='/studenthistory' element={<StudentHistory/>}/>
+
+
+
+      <Route path='/teacherloginpage' element={<TeacherloginPage/>}/>
+      <Route path='/teachersignup' element={<TeacherSignup/>}/>
+      <Route path='/teacherhomepage' element={<TeacherHomePage/>}/>
+
+
       <Route exact path='/' element={<Header/>}/>
       <Route path='*' element={<Notfound/>}/>
       </Routes>

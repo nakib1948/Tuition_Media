@@ -48,7 +48,7 @@ const StudentPage = () => {
             </Navbar>
 
         <div className='setBackground'>
-        <h2 style={{textAlign:'center'}}>make a post...</h2>
+        <h2 style={{textAlign:'center',color:'white'}}>make a post...</h2>
 
         <div className='formhandle' >
 
@@ -110,9 +110,13 @@ const StudentPage = () => {
          </label>
          <br />
 
-         <input size='25' {...register("id", { required: true })} placeholder="add a unique id (length>4)"  />
-         {errors.description && <span className='error'>description is required</span>}
+         <label>District:
+         <input  {...register("district", { required: true })} placeholder="Your district name"  />
+         {errors.district && <span className='error'>district is required</span>}
+         </label>
          <br />
+
+       
          <input style={{marginLeft:'6vw'}} type="submit" />
        </form>
        </div>

@@ -1,6 +1,4 @@
-.background{
-    background-image: url('../../Images/studentProfileBackground.jpg');
-}
+
 @media screen and (max-width: 600px){
     .background{
         display: flex;
@@ -11,4 +9,8 @@
     background-color: rgb(83, 83, 247);
     color: white;
     border-radius: 8px;
+}
+.box-shadow{
+    box-shadow: 10px 5px 5px 5px gray;
+    border-radius: 10px;
 }

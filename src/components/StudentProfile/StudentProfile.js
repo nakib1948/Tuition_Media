@@ -24,6 +24,7 @@ const StudentProfile = () => {
    }
     return (
         <div className='profileBackground'>
+          
              <Navbar  bg="dark" variant="dark">
                 <Container style={{marginLeft:'20vw'}} >
                 <Navbar.Brand href="#home">
@@ -47,7 +48,9 @@ const StudentProfile = () => {
                 </Nav>
                 </Container>
             </Navbar>
+            
              <section className="vh-100 profileBackground" style={{ backgroundColor: '#f4f5f7' }}>
+                     
                 <MDBContainer className="py-5 h-100">
                     <MDBRow className="justify-content-center align-items-center h-100">
                     <MDBCol lg="6" className="mb-4 mb-lg-0">

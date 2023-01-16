@@ -5,9 +5,13 @@ import teacherimg from'../images/Teacher.jpg';
 import { useNavigate } from 'react-router-dom';
 const Selectlogin = () => {
     const navigate = useNavigate();
-    let check=false;
+
     function handleClick(event) {   
          navigate('/studentlogin')    
+    }
+
+    function handleClick1(){
+        navigate('/teacherloginpage')
     }
 
     return (
@@ -20,7 +24,7 @@ const Selectlogin = () => {
                 <p>Student</p>
             </button>
             <br />
-            <button style={{marginTop:"10px",borderRadius:"20px"}}>
+            <button onClick={handleClick1} style={{marginTop:"10px",borderRadius:"20px"}}>
                 <img className='image' src={teacherimg} alt="" />
                 <p>Teacher</p>
             </button>

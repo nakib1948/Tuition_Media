@@ -1,0 +1,4 @@
+.display-fix{
+    display: flex;
+    flex-wrap: wrap;
+}

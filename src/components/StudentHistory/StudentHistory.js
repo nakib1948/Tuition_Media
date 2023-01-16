@@ -16,11 +16,15 @@ const StudentHistory = () => {
    
 
     return (
+        <div>
+             <h2 style={{color:'white',textAlign:'center'}}>Your previous post....</h2>
         <div className='background' style={{display:'flex',justifyContent:'space-around',paddingBottom:'20%',paddingTop:'3%'}}>
             
             {
                 data.map(dt=> <StudentshowPost post={dt}></StudentshowPost>)
             }
+        </div>
+
         </div>
     );
 };
