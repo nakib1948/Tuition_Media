@@ -21,7 +21,7 @@ const StudentRegister = () => {
     const { register, handleSubmit, watch, formState: { errors } } = useForm(formOptions)
     const onSubmit = data => {
 
-        console.log(data)
+   
         fetch('http://localhost:5000/register',{
             method:'POST',
             headers:{'Content-Type':'application/json'},

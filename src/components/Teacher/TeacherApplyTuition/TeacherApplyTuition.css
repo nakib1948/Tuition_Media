@@ -1,0 +1,29 @@
+.applytuition{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2vw;
+    margin-bottom: 8vh;
+}
+.applytuition1{
+    display: flex;
+  
+    justify-content: center;
+    align-items: center;
+    gap: 1vw;
+    margin-bottom: 10vh;
+    padding: 20px;
+    background-color:#FFF8F3;
+    margin:0 20% 2% 20%;
+    border-radius: 15%;
+    box-shadow: 10px 5px 5px 15px gray;
+}
+.applytuition-form input{
+    margin-bottom: 5px;
+}
+
+@media only screen and (max-width: 600px) {
+    .applytuition1{
+        margin:0;
+    }
+}

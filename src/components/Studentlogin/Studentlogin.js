@@ -23,6 +23,7 @@ const Studentlogin = () => {
 		if(result)
 		{
 			setloggedinUser(result);
+	
 			if(loggedinUser){
 			 navigate('/studentpage');
 			}

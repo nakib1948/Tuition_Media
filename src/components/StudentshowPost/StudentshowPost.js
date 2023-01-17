@@ -1,15 +1,20 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import Card from 'react-bootstrap/Card';
 import ListGroup from 'react-bootstrap/ListGroup';
+import { Link } from 'react-router-dom';
+import { userContext } from '../../App';
 import './StudentshowPost.css'
 
 const StudentshowPost = (props) => {
-    const {address,days,email,phone,salary,subject,description,name}=props.post;
+    const {address,days,email,phone,salary,subject,description,name,_id}=props.post;
     const clas=props.post.class;
+    const [loggedinUser,setloggedinUser]=useContext(userContext);
+     
+
     return (
         <div >
               
-                <Card style={{ width: '20rem',backgroundColor:'#FFF8F3',paddingBottom:'5px' }}>
+                <Card style={{ width: '25rem',backgroundColor:'#FFF8F3',paddingBottom:'5px' }}>
                 
                 <Card.Body>
                     <Card.Title>{subject} Teacher needed</Card.Title>
@@ -27,7 +32,10 @@ const StudentshowPost = (props) => {
                     <Card.Link href="#">Email:{email}</Card.Link>
                     <br />
                     <Card.Link href="#">Phone:{phone}</Card.Link>
-                    <ListGroup.Item><button className='batonn' >see response</button></ListGroup.Item>
+                    <br />
+                    
+                        
+                      <Link to={"/response/"+_id}> <button className='batonn' >see response</button></Link> 
                 </Card.Body>
                 
                 </Card>

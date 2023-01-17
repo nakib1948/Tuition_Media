@@ -1,11 +1,39 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import Card from 'react-bootstrap/Card';
 import ListGroup from 'react-bootstrap/ListGroup';
 import './TeacherAllPost.css'
+import {useNavigate } from 'react-router-dom';
+import { userContext } from '../../../App';
+
 
 const  TeacherAllPost = (props) => {
+    const [loggedinUser,setloggedinUser]=useContext(userContext);
     const {address,days,email,phone,salary,subject,description,district,name}=props.post;
     const clas=props.post.class;
+    console.log(props.post._id)
+    const navigate = useNavigate();
+   
+    let check=false;
+    function handleClick(){
+        let updatedValue = {};
+         updatedValue = {id:props.post._id};
+          setloggedinUser(
+            loggedinUser => ({
+                ...loggedinUser,
+                ...updatedValue
+              }));
+          
+        check=true;
+
+         if(check){
+          navigate('/teacherapplytuition')
+        }
+
+
+
+    }
+ 
+
     return (
         <div className='box-shadow' style={{ width: '25rem',margin:'20px' }}>
               
@@ -29,7 +57,7 @@ const  TeacherAllPost = (props) => {
                     <Card.Link href="#">Email:{email}</Card.Link>
                     <br />
                     <Card.Link href="#">Phone:{phone}</Card.Link>
-                    <ListGroup.Item><button style={{padding:'2px 15px 2px 15px',marginLeft:'7vw'}} className='batonn' >Apply</button></ListGroup.Item>
+                    <ListGroup.Item><button onClick={handleClick} style={{padding:'2px 15px 2px 15px',marginLeft:'7vw'}} className='batonn' >Apply</button></ListGroup.Item>
                 </Card.Body>
                 
                 </Card>

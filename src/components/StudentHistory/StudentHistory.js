@@ -12,7 +12,7 @@ const StudentHistory = () => {
     },[])
     
       const data=post.filter(post=> post.email===loggedinUser.email);
-      console.log(data);
+
    
 
     return (

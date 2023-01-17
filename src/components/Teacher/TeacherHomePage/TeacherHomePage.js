@@ -6,18 +6,35 @@ import Form from 'react-bootstrap/Form';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import TeacherAllPost from '../TeacherAllPost/TeacherAllPost';
+import {useNavigate } from 'react-router-dom';
+import { userContext } from '../../../App';
 
 
 
 const TeacherHomePage = () => {
-    const [post,setPost]=useState([]);
+    const [loggedinUser,setloggedinUser]= useContext(userContext)
+   const [post,setPost]=useState([]);
    const [searchterm,setSearchterm]=useState("");
-    
+   const navigate = useNavigate();
     useEffect(()=>{
         fetch('http://localhost:5000/studentpostget')
         .then(res=>res.json())
         .then(data=>setPost(data));
     },[])
+    let check=false;
+    function handleClick(event) {
+        check=true;
+        setloggedinUser({})
+        if(check){
+        navigate('/teacherloginpage')    
+        }
+   }
+   function handleClick1(event) {
+    navigate('/teacherprofile')    
+}
+
+
+
     return (
         <div>
             <Navbar bg="primary"  expand="lg">
@@ -30,7 +47,9 @@ const TeacherHomePage = () => {
                     style={{ maxHeight: '100px' }}
                     navbarScroll
                 >
-                    <Nav.Link href="#action1" style={{color:'white'}}>Home</Nav.Link>
+                    <Button variant='primary' style={{fontSize:'15px',fontWeight:'500'}} >Home</Button>
+                    <Button onClick={handleClick1} variant='primary' style={{fontSize:'15px',fontWeight:'500'}} > Profile</Button>
+                    <Button onClick={handleClick} variant='primary' style={{fontSize:'15px',fontWeight:'500'}} >Logout</Button>
                 </Nav>
                 <Form className="d-flex">
                     <Form.Control

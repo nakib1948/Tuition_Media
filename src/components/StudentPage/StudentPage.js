@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext, useEffect } from 'react';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
@@ -6,12 +6,21 @@ import Button from 'react-bootstrap/Button';
 import { useForm } from 'react-hook-form';
 import { useNavigate } from 'react-router-dom';
 import './StudentPage.css'
+import { userContext } from '../../App';
 const StudentPage = () => {
+    const [loggedinUser,setloggedinUser]=useContext(userContext);
+
+ 
+    
+    
     const navigate = useNavigate();
     const { register, handleSubmit, watch, formState: { errors } } = useForm()
     function handleClick(event) {   
         navigate('/studentprofile')    
    }
+    function handleClick1(){
+        navigate('/studenthome')
+    }
 
     const onSubmit=data=>{
         fetch('http://localhost:5000/studentpost',{
@@ -39,7 +48,7 @@ const StudentPage = () => {
                 </Navbar.Brand>
                 <Nav style={{paddingLeft:'3vw'}}  className="me-auto">
                    
-                    <Button size="sm" variant="primary"  active>
+                    <Button onClick={handleClick1} size="sm" variant="primary"  active>
                         Home
                     </Button>
                  
