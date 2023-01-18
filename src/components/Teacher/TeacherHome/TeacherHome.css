@@ -1,0 +1,17 @@
+.teacherhome{
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: 5vw;
+    margin-bottom: 5vw;
+ 
+}
+.teacherhomeparent{
+    background-image: url('../../../Images/white-painted-wall-texture-background.jpg');
+    height: 100vh;
+   
+}
+@media screen and (max-width: 600px){
+    .teacherhome{
+        flex-direction: column;
+    }
+}

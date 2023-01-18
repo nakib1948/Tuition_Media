@@ -6,11 +6,21 @@ import { userContext } from '../../App';
 const ResponseShow = (props) => {
 
     const [loggedinUser,setloggedinUser]=useContext(userContext);
-     const [relation,setrelation]=useState([]);
-     const {email,username,mobile,description,education}=props.post;
-     
+    const [sbj,setsbj]=useState([]);
+     const {email,username,mobile,description,education,id}=props.post;
+    
 
+    useEffect(()=>{
+        fetch('http://localhost:5000/studentpostget')
+        .then(res=>res.json())
+        .then(data=>setsbj(data));
+    },[])
+
+    const dat=sbj.find(data=>data._id===id);
+   // console.log(dat.subject);
      
+  
+    const [hidden, setHidden] = useState(false);
      function handleClick(){
         const updatedValue = {
         "studentemail":loggedinUser.email,
@@ -22,27 +32,28 @@ const ResponseShow = (props) => {
         "studentaddress":loggedinUser.address,
         "teachereducation":education,
         "studentschool":loggedinUser.school,
-        "studentclass":loggedinUser.class
-        }; 
-        setrelation(relation => ({
-            ...relation,
-            ...updatedValue
-          }));
+        "studentclass":loggedinUser.class,
+        "subject":dat.subject
+        }
+      
           
         fetch('http://localhost:5000/relationpost',{
             method:'POST',
             headers:{'Content-Type':'application/json'},
-            body:JSON.stringify(relation)
+            body:JSON.stringify(updatedValue)
         })
         .then(res=>res.json())
         .then(data =>{
             console.log(data);
         })
+
+        alert('accepted!')
+        setHidden(true)
      }
     return (
         <div>
                 
-                <Card style={{ width: '25rem',backgroundColor:'#FFF8F3',paddingBottom:'5px' }}>
+                <Card style={{ width: '25rem',color:'#003300', backgroundColor:'#FFF8F3',paddingBottom:'5px' }}>
                 
                 <Card.Body>
                     
@@ -61,7 +72,7 @@ const ResponseShow = (props) => {
                     <br />
                     
                         
-                      <button onClick={handleClick} className='batonn' >Accept</button> 
+                    {!hidden && <button onClick={handleClick} className='batonn' >Accept</button> }  
                 </Card.Body>
                 
                 </Card>

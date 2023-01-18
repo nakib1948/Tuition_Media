@@ -1,0 +1,17 @@
+.studenthome{
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: 5vw;
+    margin-bottom: 5vw;
+ 
+}
+.studenthomeparent{
+    background-image: url('../../Images/white-painted-wall-texture-background.jpg');
+    height: 100vh;
+   
+}
+@media screen and (max-width: 600px){
+    .studenthome{
+        flex-direction: column;
+    }
+}

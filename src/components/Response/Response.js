@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import ResponseShow from '../ResponseShow/ResponseShow';
-
+import './Response.css'
 const Response = () => {
     const [post,setPost]=useState([]);
     const {key}= useParams();
@@ -14,8 +14,8 @@ const Response = () => {
       const data=post.filter(post=> post.id===key);
       
     return (
-        <div>
-            <div className='background' style={{display:'flex', flexWrap: 'wrap',gap:'3vw',paddingBottom:'20%',paddingTop:'3%'}}>
+        <div className='response' >
+            <div  style={{display:'flex', flexWrap: 'wrap',gap:'3vw',paddingBottom:'20%',paddingTop:'3%'}}>
             
             {
                 data.map(dt=> <ResponseShow post={dt}></ResponseShow>)

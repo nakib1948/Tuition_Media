@@ -1,5 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { userContext } from '../../App';
+import Studentsavepost from '../Studentsavepost/Studentsavepost';
+import './StudentHome.css'
 
 const StudentHome = () => {
    const [loggedinUser,setloggedinUser]=useContext(userContext);
@@ -10,12 +12,23 @@ const StudentHome = () => {
     .then(data=>setPost(data));
     },[])
 
-  const data=post.find(post=> post.studentemail===loggedinUser.email);
+  const data=post.filter(post=> post.studentemail===loggedinUser.email);
    console.log(data)
 
     return (
-        <div>
-            <h1>student home</h1>
+        <div className='studenthomeparent'>
+           <h5 style={{textAlign:'center',color:'#330000',padding:'2vh'}}>Your Teachers information...</h5>
+
+       <div className='studenthome'>
+            
+        {
+                    data.map(data => <Studentsavepost post={data}></Studentsavepost>)
+        }
+       </div>
+     
+
+
+
         </div>
     );
 };

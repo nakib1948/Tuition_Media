@@ -25,7 +25,7 @@ const StudentProfile = () => {
     return (
         <div className='profileBackground'>
           
-             <Navbar  bg="dark" variant="dark">
+             <Navbar  bg="light" variant="dark">
                 <Container style={{marginLeft:'20vw'}} >
                 <Navbar.Brand href="#home">
                 <Button  size="sm" variant="primary"  active>

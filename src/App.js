@@ -19,6 +19,7 @@ import StudentseeResponse from './components/StudentseeResponse/StudentseeRespon
 import Response from './components/Response/Response';
 import TeacherProfile from './components/Teacher/TeacherProfile/TeacherProfile';
 import StudentHome from './components/StudentHome/StudentHome';
+import TeacherHome from './components/Teacher/TeacherHome/TeacherHome';
 
 
 export const userContext=createContext();
@@ -27,7 +28,7 @@ function App() {
   const [loggedinUser,setloggedinUser]=useState({});
   return (
     <userContext.Provider value={[loggedinUser,setloggedinUser]}>
-      <h3>email:{loggedinUser.email}</h3>
+      {/* <h3>email:{loggedinUser.email}</h3> */}
 
       <Routes>
       
@@ -48,6 +49,7 @@ function App() {
       <Route path='/teacherapplytuition' element={<TeacherApplyTuition/>}/>
       <Route path='/teacherprofile' element={<TeacherProfile/>}/>
       <Route path='/studenthome' element={<StudentHome/>}/>
+      <Route path='/teacherhome' element={<TeacherHome/>}/>
 
 
 

@@ -23,7 +23,7 @@ const TeacherApplyTuition = () => {
        
     }
     return (
-        <div>
+        <div className='teacherapplytuition'>
             <div className='applytuition'>
                 <h1 class="fst-italic">Tuition</h1>
                 <img src={require('../../../Images/owl_image.png')} alt="" />

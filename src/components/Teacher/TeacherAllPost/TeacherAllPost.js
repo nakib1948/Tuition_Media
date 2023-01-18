@@ -37,7 +37,7 @@ const  TeacherAllPost = (props) => {
     return (
         <div className='box-shadow' style={{ width: '25rem',margin:'20px' }}>
               
-                <Card style={{ width: '25rem',backgroundColor:'#FFF8F3',paddingBottom:'5px' }}>
+                <Card style={{ width: '25rem',color:'#003300',backgroundColor:'#FFF8F3',paddingBottom:'5px' }}>
                 
                 <Card.Body>
                     <Card.Title>{subject} Teacher needed</Card.Title>

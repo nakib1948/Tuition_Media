@@ -29,14 +29,17 @@ const TeacherHomePage = () => {
         navigate('/teacherloginpage')    
         }
    }
-   function handleClick1(event) {
-    navigate('/teacherprofile')    
-}
+    function handleClick1(event) {
+        navigate('/teacherprofile')    
+    }
+    function handleClick2(event) {
+        navigate('/teacherhome')    
+    }
 
 
 
     return (
-        <div>
+        <div className='teacherhomepage'>
             <Navbar bg="primary"  expand="lg">
             <Container fluid>
                 <Navbar.Brand href="#" style={{color:'white'}}>Welcome!!</Navbar.Brand>
@@ -47,7 +50,7 @@ const TeacherHomePage = () => {
                     style={{ maxHeight: '100px' }}
                     navbarScroll
                 >
-                    <Button variant='primary' style={{fontSize:'15px',fontWeight:'500'}} >Home</Button>
+                    <Button onClick={handleClick2} variant='primary' style={{fontSize:'15px',fontWeight:'500'}} >Home</Button>
                     <Button onClick={handleClick1} variant='primary' style={{fontSize:'15px',fontWeight:'500'}} > Profile</Button>
                     <Button onClick={handleClick} variant='primary' style={{fontSize:'15px',fontWeight:'500'}} >Logout</Button>
                 </Nav>
