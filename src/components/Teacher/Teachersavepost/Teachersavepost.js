@@ -9,8 +9,11 @@ const Teachersavepost = (props) => {
 
             <Card bg="Light" style={{ width: '20rem',color:"#000033",   backgroundColor: '#FFF8F3' }}>
                 <Card.Body>
-                    <Card.Title>{studentname}</Card.Title>
-                    <Card.Subtitle className="mb-2 text-muted">Subject: {subject}</Card.Subtitle>
+                    <Card.Title>{studentname} accepted your proposal</Card.Title>
+                    <Card.Text> student:
+                     {studentname}
+                    </Card.Text>
+                    <Card.Text className="mb-2 text-muted">Subject: {subject}</Card.Text>
                     <Card.Text>
                     {studentaddress}
                     </Card.Text>

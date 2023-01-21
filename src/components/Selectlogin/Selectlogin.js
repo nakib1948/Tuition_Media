@@ -15,6 +15,7 @@ const Selectlogin = () => {
     }
 
     return (
+        <div className='selectlogin-parent'>
         <div className='selectlogin'>
           
             <h3>Welcome to tuition Point</h3>
@@ -28,6 +29,8 @@ const Selectlogin = () => {
                 <img className='image' src={teacherimg} alt="" />
                 <p>Teacher</p>
             </button>
+        </div>
+
         </div>
     );
 };

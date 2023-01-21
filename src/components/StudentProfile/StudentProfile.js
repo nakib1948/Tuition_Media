@@ -4,7 +4,7 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import Button from 'react-bootstrap/Button';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { userContext } from '../../App';
 import { MDBCol, MDBContainer, MDBRow, MDBCard, MDBCardText, MDBCardBody, MDBCardImage, MDBTypography, MDBIcon } from 'mdb-react-ui-kit';
 const StudentProfile = () => {
@@ -22,15 +22,18 @@ const StudentProfile = () => {
    function handleClick1(){
        navigate('/studenthistory')
    }
+   function handleClick2(){
+    navigate('/updateprofile')
+}
     return (
         <div className='profileBackground'>
           
              <Navbar  bg="light" variant="dark">
                 <Container style={{marginLeft:'20vw'}} >
                 <Navbar.Brand href="#home">
-                <Button  size="sm" variant="primary"  active>
+              <Link to={"/updateprofile/"+loggedinUser._id}>  <Button  onClick={handleClick2} size="sm" variant="primary"  active>
                        Update Profile
-                    </Button>
+                    </Button></Link>
                 </Navbar.Brand>
                 <Nav style={{paddingLeft:'0vw'}}  className="me-auto">
                    

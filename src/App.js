@@ -20,6 +20,9 @@ import Response from './components/Response/Response';
 import TeacherProfile from './components/Teacher/TeacherProfile/TeacherProfile';
 import StudentHome from './components/StudentHome/StudentHome';
 import TeacherHome from './components/Teacher/TeacherHome/TeacherHome';
+import UpdateProfile from './components/Updateprofile/UpdateProfile';
+import TeacherUpdateProfile from './components/Teacher/TeacherUpdateProfile/TeacherUpdateProfile';
+import Privateroutes from './components/Privateroutes';
 
 
 export const userContext=createContext();
@@ -35,23 +38,28 @@ function App() {
       <Route path='/selectlogin' element={<Selectlogin/>}/>
       <Route path='/studentlogin' element={<Studentlogin/>}/>
       <Route path='/studentregister' element={<StudentRegister/>}/>
+      <Route path='/teacherloginpage' element={<TeacherloginPage/>}/>
+      <Route path='/teachersignup' element={<TeacherSignup/>}/>
+
+      <Route element={<Privateroutes/>}>
+
       <Route path='/studentpage' element={<StudentPage/>}/>
       <Route path='/studentprofile' element={<StudentProfile/>}/>
       <Route path='/studenthistory' element={<StudentHistory/>}/>
       <Route path='/studentseeresponse' element={<StudentseeResponse/>}/>
       <Route path='/response/:key' element={<Response/>}/>
+      <Route path='/updateprofile/:id' element={<UpdateProfile/>}/>
 
 
 
-      <Route path='/teacherloginpage' element={<TeacherloginPage/>}/>
-      <Route path='/teachersignup' element={<TeacherSignup/>}/>
+      
       <Route path='/teacherhomepage' element={<TeacherHomePage/>}/>
       <Route path='/teacherapplytuition' element={<TeacherApplyTuition/>}/>
       <Route path='/teacherprofile' element={<TeacherProfile/>}/>
       <Route path='/studenthome' element={<StudentHome/>}/>
       <Route path='/teacherhome' element={<TeacherHome/>}/>
-
-
+      <Route path='/teacherupdateprofile/:id' element={<TeacherUpdateProfile/>}/>
+      </Route>
 
 
       <Route exact path='/' element={<Header/>}/>

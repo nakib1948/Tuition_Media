@@ -62,7 +62,7 @@ const StudentPage = () => {
         <div className='formhandle' >
 
         
-        <form className='ship-form' onSubmit={handleSubmit(onSubmit)}>
+        <form className='ship-form setinput' onSubmit={handleSubmit(onSubmit)}>
         
          <label>Name:
          <input className='studentpage'  {...register("name", { required: true })} placeholder="Your Name" />
@@ -126,7 +126,7 @@ const StudentPage = () => {
          <br />
 
        
-         <input style={{marginLeft:'6vw'}} type="submit" />
+         <input  className='bg-primary text-white submitsetting'  type="submit" />
        </form>
        </div>
 

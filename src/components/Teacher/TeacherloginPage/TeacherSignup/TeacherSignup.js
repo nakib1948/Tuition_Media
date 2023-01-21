@@ -43,45 +43,47 @@ const TeacherSignup = () => {
     
   return (
 
-        <div className="register">
-            <div className="col-1">
-                <h2 id='signin'>SignUp</h2>
-                
+    <div className='setBackground '>
+            
+    <div className='formhandle pt-2 ' >
+        <h2 className='pt-2 studentregisterh2' style={{paddingLeft:'5vw'}}>SignUp</h2>
+        
 
-                <form id='form' className='flex flex-col' onSubmit={handleSubmit(onSubmit)}>
-                    <input type="text" {...register("username")} required placeholder='Name' />
-                    {errors.username?.type === "required" && "username is required"}
-
-                    <input type="email" {...register("email")} required  placeholder='Email' />
-                    {errors.email?.type === "required" && "email is required"}
-
-                    <input  name="password" type="password" required {...register("password")} 
-                     placeholder='password(must be 6 character long)' 
-                     className={`form-control ${errors.password ? 'is-invalid' : ''}`}/>
-
-                    <input type="text" {...register("address")} required placeholder='Address' />
-                    {errors.address?.type === "required" && "address is required"}
-
-                    
-
-                    <input type="text" {...register("school")} required placeholder='job/eucational institute' />
-                    {errors.school?.type === "required" && "job/educational institute is required"}
-
-                    <input type="url" {...register("image")} required placeholder='image url' />
-                    {errors.image?.type === "required" && "image is required"}
-
-                    <input type="text" required {...register("mobile", { required : true, maxLength: 11 })}          
-                     placeholder='mobile number' />
-                    {errors.mobile?.type === "required" && "Mobile Number is required"}
-                    {errors.mobile?.type === "maxLength" && "Max Length Exceed"}
-                    <button className='btn' >Sign Up</button>
-                </form>
-
-            </div>
-            <div className="col-2">
-                <img src={bgImg} alt="" />
-            </div>
+        <form className='ship-form studentregisterinput'  onSubmit={handleSubmit(onSubmit)}>
+            <input className='studentpage' type="text" {...register("username")} required placeholder='Name' />
+            {errors.username?.type === "required" && "username is required"}
+            <br />
+            <input className='studentpage' type="email" {...register("email")} required  placeholder='Email' />
+            {errors.email?.type === "required" && "email is required"}
+            <br />
+            <input className='studentpage'  name="password" type="password" required {...register("password", { required : true, minLength: 6 })} 
+             placeholder='password' 
+            />
+            {errors.password?.type === "required" && "Mobile Number is required"}
+            {errors.password?.type === "minLength" && "password must be six character long"}
+            <br />
+            <input className='studentpage' type="text" {...register("address")} required placeholder='Address' />
+            {errors.address?.type === "required" && "address is required"}
+            <br />
+            <input className='studentpage' type="text" {...register("class")} required placeholder='Class' />
+            {errors.class?.type === "required" && "class is required"}
+            <br />
+            <input className='studentpage' type="text" {...register("school")} required placeholder='job/institution' />
+            {errors.school?.type === "required" && "school and college is required"}
+            <br />
+            <input className='studentpage' type="url" {...register("image")} required placeholder='image url' />
+            {errors.image?.type === "required" && "image is required"}
+            <br />
+            <input className='studentpage' type="text" required {...register("mobile", { required : true, maxLength: 11 })}          
+             placeholder='mobile number' />
+            {errors.mobile?.type === "required" && "Mobile Number is required"}
+            {errors.mobile?.type === "maxLength" && "Max Length Exceed"}
+            <br />
+            <button  className='btn bg-primary text-white submitsetting1 ' >Sign Up</button>
+        </form>
         </div>
+</div>
+
     
   )
 };

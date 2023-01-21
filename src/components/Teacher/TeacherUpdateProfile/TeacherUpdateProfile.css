@@ -1,0 +1,11 @@
+
+.setBackground{
+    background-image: url('../../../Images/white-painted-wall-texture-background.jpg');
+    padding-bottom: 20vh;
+}
+@media only screen and (max-width: 576px){
+    .teacherupdateprofile input{
+        width: 15rem;
+    }
+}
+

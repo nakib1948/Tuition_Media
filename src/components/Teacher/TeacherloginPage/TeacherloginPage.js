@@ -43,36 +43,25 @@ const TeacherloginPage = () => {
 
     return (
 		<div className='bod'>
-			
-		<div class="container" id="container">
 		
-		<div class="form-container sign-in-container">
+		<div >
 			<form onSubmit={handleSubmit(onSubmit)}>
-				<h1>Sign in</h1>
-				
-				<span> use your account</span>
+				<h1 style={{marginTop:'3rem'}}>Sign in</h1>
+				<p>use your account</p>
+				<span style={{paddingLeft:'20rem'}}> </span>
 				<input type="email" {...register("email")} required  placeholder='Email' />
 				{errors.email?.type === "required" && "email is required"}
 				<input type="password" {...register("password")} required  placeholder='password' />
 				{errors.password?.type === "required" && "password is required"}
 				<a href="#">Forgot your password?</a>
 				<button>Sign In</button>
+			
+				<p>Don't have an account?</p>
+				<button style={{marginBottom:'5rem'}}  onClick={handleClick}>Sign Up</button>
 			</form>
 		</div>
-		<div class="overlay-container">
-			<div class="overlay">
-				
-				<div class="overlay-panel overlay-right">
-					<h1>Welcome!</h1>
-					<p>Enter your personal details and start journey with us</p>
-					<button class="ghost" id="signUp" onClick={handleClick}>Sign Up</button>
-				</div>
-			</div>
-		</div>
+		
 	</div>
-
-
-        </div>
     );
 };
 

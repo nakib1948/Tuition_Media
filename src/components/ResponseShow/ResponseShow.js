@@ -7,8 +7,8 @@ const ResponseShow = (props) => {
 
     const [loggedinUser,setloggedinUser]=useContext(userContext);
     const [sbj,setsbj]=useState([]);
-     const {email,username,mobile,description,education,id}=props.post;
-    
+    const {email,username,mobile,description,education,id,_id}=props.post;
+    let waitrak=false;
 
     useEffect(()=>{
         fetch('http://localhost:5000/studentpostget')
@@ -33,7 +33,10 @@ const ResponseShow = (props) => {
         "teachereducation":education,
         "studentschool":loggedinUser.school,
         "studentclass":loggedinUser.class,
-        "subject":dat.subject
+        "subject":dat.subject,
+        "day":dat.days,
+        "salary":dat.salary,
+        "district":dat.district
         }
       
           
@@ -48,7 +51,18 @@ const ResponseShow = (props) => {
         })
 
         alert('accepted!')
-        setHidden(true)
+        waitrak=true;
+        if(waitrak){
+            fetch(`http://localhost:5000/deletepost/${_id}`,{
+                method:'DELETE'
+            }) 
+            .then(res=>res.json())
+            .then(result=>{
+               console.log(result)
+            })
+             setHidden(true)
+        }
+        
      }
     return (
         <div>

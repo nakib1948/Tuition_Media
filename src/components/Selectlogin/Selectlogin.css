@@ -4,7 +4,7 @@
     padding-top: 10px;
     color:#000066;
     border: 5px solid salmon;
-    box-shadow: 20px 20px 20px 20px gray;
+    box-shadow: 20px 20px 20px 10px gray;
     margin-left: 20%;
     margin-right: 20%;
     margin-top: 1%;
@@ -17,6 +17,9 @@
     height: 180px;  
     width: 180px;
     border-radius: 10px;
+}
+.selectlogin-parent{
+    background-image: url('../../Images/studentProfileBackground.jpg');
 }
 
 @media only screen and (max-width: 600px) {

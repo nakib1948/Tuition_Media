@@ -1,19 +1,40 @@
 .studentpage{
     padding-top: 2vh;
     margin-top: 1.5vh;
+    margin-bottom: 2vh;
     border: none;
     background-color: whitesmoke;
     margin-left: 1vw;
     border-radius: 5px;
+    width: 20vw;
 }
 .formhandle{
-    padding-left: 8vw;
+    padding-left: 5vw;
     background-color: #f7e7db;
     margin-left: 30%;
-    margin-right: 35%;
+    margin-right: 30%;
     border-radius: 10px;
     height: 100%;
+    
+}
+.submitsetting{
+    margin-left: 10vw;
+    width: 10vw;
+    margin-bottom: 3vw;
+    padding: 5px;
+    border-radius: 5px;
+    box-shadow: 1px 5px 10px grey;
 }
 .setBackground{
     background-image: url('../../Images/white-painted-wall-texture-background.jpg');
+}
+@media only screen and (max-width: 576px){
+    .formhandle{
+        margin-left: 2%;
+        margin-right: 2%;
+        
+    }
+    .setinput input{
+        width: 15rem;
+    }
 }

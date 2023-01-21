@@ -18,7 +18,7 @@ const StudentHistory = () => {
     return (
         <div className='studenthistory'>
              <h2 style={{color:'#003300',textAlign:'center'}}>Your previous post....</h2>
-        <div  style={{display:'flex',justifyContent:'space-around',paddingBottom:'20%',paddingTop:'3%'}}>
+        <div  style={{display:'flex',flexWrap:'wrap',justifyContent:'space-around',paddingBottom:'20%',paddingTop:'3%'}}>
             
             {
                 data.map(dt=> <StudentshowPost post={dt}></StudentshowPost>)

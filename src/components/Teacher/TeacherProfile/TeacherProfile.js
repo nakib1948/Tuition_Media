@@ -3,11 +3,16 @@ import './TeacherProfile.css'
 
 import { MDBCol, MDBContainer, MDBRow, MDBCard, MDBCardText, MDBCardBody, MDBCardImage, MDBTypography, MDBIcon } from 'mdb-react-ui-kit';
 import { userContext } from '../../../App';
+import { Button } from 'react-bootstrap';
+import { Link, useNavigate } from 'react-router-dom';
 const TeacherProfile = () => {
  
+    const navigate=useNavigate();
     const [loggedinUser,setloggedinUser]=useContext(userContext);
-    const {username,school,mobile,image,email,address}=loggedinUser;
-    
+    const {username,school,mobile,image,email,address,_id}=loggedinUser;
+    function handleClick(){
+        navigate('/teacherupdateprofile')
+    }
   
     return (
         <div className='profileBackground'>
@@ -26,7 +31,9 @@ const TeacherProfile = () => {
                                 alt="Avatar" className="my-5" style={{ width: '150px',borderRadius:'50%' }} fluid />
                             <MDBTypography tag="h5">{username}</MDBTypography>
                             <MDBCardText>{school}</MDBCardText>
-                            <MDBIcon far icon="edit mb-5" />
+                            
+                         <Link  to={"/teacherupdateprofile/"+_id}><Button onClick={handleClick} style={{height:'7vh',marginBottom:'2vh'}} ><MDBIcon far icon="edit mb-5" />Update</Button>
+                         </Link>
                             </MDBCol>
                             <MDBCol md="8">
                             <MDBCardBody className="p-4">
@@ -60,6 +67,7 @@ const TeacherProfile = () => {
                                 <a href="#!"><MDBIcon fab icon="facebook me-3" size="lg" /></a>
                                 <a href="#!"><MDBIcon fab icon="twitter me-3" size="lg" /></a>
                                 <a href="#!"><MDBIcon fab icon="instagram me-3" size="lg" /></a>
+
                                 </div>
                             </MDBCardBody>
                             </MDBCol>

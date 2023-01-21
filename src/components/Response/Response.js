@@ -12,6 +12,7 @@ const Response = () => {
     },[])
     
       const data=post.filter(post=> post.id===key);
+      console.log(data)
       
     return (
         <div className='response' >

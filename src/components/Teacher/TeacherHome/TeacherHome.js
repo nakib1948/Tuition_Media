@@ -18,7 +18,7 @@ const TeacherHome = () => {
         <div className='teacherhomeparent'>
            <h5 style={{textAlign:'center',color:'#330000',padding:'2vh'}}>Your Students information...</h5>
 
-                <div className='teacherhome'>
+                <div className='teacherhome' style={{display:'flex',flexWrap:'wrap',justifyContent:'space-around',paddingBottom:'20%',paddingTop:'3%'}}>
                         
                     {
                                 data.map(data => <Teachersavepost post={data}></Teachersavepost>)

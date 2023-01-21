@@ -1,5 +1,5 @@
 .header{
-    background-image: url('../../Images/education_image.jpg');
+    background-image: url('../../Images/white-painted-wall-texture-background.jpg');
    
  
     height: 100%;
@@ -12,7 +12,7 @@
 .header-child{
     width: 30%;
     text-align: center;
-    float: right;
+   margin-left: 35%;
     margin-top: 30vh;
     margin-right: 5vw;
     color: black;
@@ -20,7 +20,13 @@
 .header-child button{
     width: 20vw;
 }
-.header-child h3,p,button{
+.header-child h3,p{
     padding-top: 2vh;
 }
 
+@media only screen and (max-width: 576px){
+    .header-child{
+        width: 80%;
+        margin-left: 10%;
+    }
+}

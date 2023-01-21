@@ -8,7 +8,7 @@ import Navbar from 'react-bootstrap/Navbar';
 import TeacherAllPost from '../TeacherAllPost/TeacherAllPost';
 import {useNavigate } from 'react-router-dom';
 import { userContext } from '../../../App';
-
+import Offcanvas from 'react-bootstrap/Offcanvas';
 
 
 const TeacherHomePage = () => {
@@ -40,7 +40,7 @@ const TeacherHomePage = () => {
 
     return (
         <div className='teacherhomepage'>
-            <Navbar bg="primary"  expand="lg">
+            <Navbar bg="info"  expand="lg">
             <Container fluid>
                 <Navbar.Brand href="#" style={{color:'white'}}>Welcome!!</Navbar.Brand>
                 <Navbar.Toggle aria-controls="navbarScroll" />
@@ -50,9 +50,9 @@ const TeacherHomePage = () => {
                     style={{ maxHeight: '100px' }}
                     navbarScroll
                 >
-                    <Button onClick={handleClick2} variant='primary' style={{fontSize:'15px',fontWeight:'500'}} >Home</Button>
-                    <Button onClick={handleClick1} variant='primary' style={{fontSize:'15px',fontWeight:'500'}} > Profile</Button>
-                    <Button onClick={handleClick} variant='primary' style={{fontSize:'15px',fontWeight:'500'}} >Logout</Button>
+                    <Button onClick={handleClick2} variant='info' style={{fontSize:'15px',fontWeight:'500'}} >students</Button>
+                    <Button onClick={handleClick1} variant='info' style={{fontSize:'15px',fontWeight:'500'}} > Profile</Button>
+                    <Button onClick={handleClick} variant='info' style={{fontSize:'15px',fontWeight:'500'}} >Logout</Button>
                 </Nav>
                 <Form className="d-flex">
                     <Form.Control
@@ -64,13 +64,14 @@ const TeacherHomePage = () => {
                         setSearchterm(event.target.value);
                     }}
                     />
-                    <Button style={{color:'white',backgroundColor:'gray'}} variant="outline-success">Search</Button>
+                    <Button style={{color:'white',backgroundColor:'blue'}} variant="outline-success">Search</Button>
                 </Form>
                 </Navbar.Collapse>
             </Container>
             </Navbar>
 
-         
+  
+
             <div className='display-fix' >
           
             {
