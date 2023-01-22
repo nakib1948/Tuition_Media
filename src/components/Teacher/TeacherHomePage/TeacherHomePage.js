@@ -17,7 +17,7 @@ const TeacherHomePage = () => {
    const [searchterm,setSearchterm]=useState("");
    const navigate = useNavigate();
     useEffect(()=>{
-        fetch('http://localhost:5000/studentpostget')
+        fetch('https://tuition-media-server.onrender.com/studentpostget')
         .then(res=>res.json())
         .then(data=>setPost(data));
     },[])

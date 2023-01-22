@@ -9,7 +9,7 @@ const TeacherApplyTuition = () => {
     const { register, handleSubmit, watch, formState: { errors } } = useForm()
     const onSubmit = data => {
         data.id=loggedinUser.id;
-        fetch('http://localhost:5000/teacherpost',{
+        fetch('https://tuition-media-server.onrender.com/teacherpost',{
             method:'POST',
             headers:{'Content-Type':'application/json'},
             body:JSON.stringify(data)

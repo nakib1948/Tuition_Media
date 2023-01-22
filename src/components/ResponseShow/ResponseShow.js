@@ -11,7 +11,7 @@ const ResponseShow = (props) => {
     let waitrak=false;
 
     useEffect(()=>{
-        fetch('http://localhost:5000/studentpostget')
+        fetch('https://tuition-media-server.onrender.com/studentpostget')
         .then(res=>res.json())
         .then(data=>setsbj(data));
     },[])
@@ -40,7 +40,7 @@ const ResponseShow = (props) => {
         }
       
           
-        fetch('http://localhost:5000/relationpost',{
+        fetch('https://tuition-media-server.onrender.com/relationpost',{
             method:'POST',
             headers:{'Content-Type':'application/json'},
             body:JSON.stringify(updatedValue)
@@ -53,7 +53,7 @@ const ResponseShow = (props) => {
         alert('accepted!')
         waitrak=true;
         if(waitrak){
-            fetch(`http://localhost:5000/deletepost/${_id}`,{
+            fetch(`https://tuition-media-server.onrender.com/deletepost/${_id}`,{
                 method:'DELETE'
             }) 
             .then(res=>res.json())

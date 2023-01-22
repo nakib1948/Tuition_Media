@@ -6,7 +6,7 @@ const TeacherHome = () => {
    const [loggedinUser,setloggedinUser]=useContext(userContext);
    const [post,setPost]=useState([]);
    useEffect(()=>{
-    fetch('http://localhost:5000/relationget')
+    fetch('https://tuition-media-server.onrender.com/relationget')
     .then(res=>res.json())
     .then(data=>setPost(data));
     },[])

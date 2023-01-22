@@ -8,7 +8,7 @@ const Studentlogin = () => {
 	const [loggedinUser,setloggedinUser]= useContext(userContext)
 	const [loginUser,setloginUser]=useState([]);
 	useEffect(()=>{
-		fetch('http://localhost:5000/studentLogin')
+		fetch('https://tuition-media-server.onrender.com/studentLogin')
 		.then(res=>res.json())
 		.then(data=>setloginUser(data));
 	},[])

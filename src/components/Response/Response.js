@@ -6,7 +6,7 @@ const Response = () => {
     const [post,setPost]=useState([]);
     const {key}= useParams();
     useEffect(()=>{
-        fetch('http://localhost:5000/teacherpostget')
+        fetch('https://tuition-media-server.onrender.com/teacherpostget')
         .then(res=>res.json())
         .then(data=>setPost(data));
     },[])

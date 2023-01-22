@@ -13,7 +13,7 @@ const TeacherUpdateProfile = () => {
  
     const { register, handleSubmit, watch, formState: { errors } } = useForm()
     const onSubmit=data=>{
-        fetch(`http://localhost:5000/updateprofile/${id}`,{
+        fetch(`https://tuition-media-server.onrender.com/updateprofile/${id}`,{
             method:'PATCH',
             headers:{'Content-Type' : 'application/json'},
             body: JSON.stringify(data)

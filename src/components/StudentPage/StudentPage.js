@@ -23,7 +23,7 @@ const StudentPage = () => {
     }
 
     const onSubmit=data=>{
-        fetch('http://localhost:5000/studentpost',{
+        fetch('https://tuition-media-server.onrender.com/studentpost',{
             method:'POST',
             headers:{'Content-Type':'application/json'},
             body:JSON.stringify(data)
